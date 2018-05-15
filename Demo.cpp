@@ -1,18 +1,19 @@
 #include "List.h"
-
 #include <stdlib.h>
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-List<int> * slow_list(int n) {
+List<int> *slow_list(int n)
+{
 
   // placeholder
   return nullptr;
 }
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[])
+{
   List<int> *list = new List<int>();
   List<string> *list2 = new List<string>();
   List<string> *list3 = new List<string>();
@@ -21,24 +22,27 @@ int main(int argc, char *argv[]){
 
   n = 1000;
 
-  if(argc == 2) {
+  //take in an arg that sets n to whatever you want
+  if (argc == 2)
+  {
     n = atoi(argv[1]);
   }
 
-
-  for(x=1; x<=4; x++) {
+  for (x = 1; x <= n; x++)
+  {
     list->push_front(x);
   }
   list->print();
 
-  for(x=1; x<=4; x++) {
+  for (x = 1; x <= n; x++)
+  {
     list->push_back(x);
   }
 
   list->print();
 
   list->pop_front(x);
-  cout << "popped " << x <<endl;
+  cout << "popped " << x << endl;
   list->print();
 
   list->slow_remove_all(2);
@@ -49,10 +53,10 @@ int main(int argc, char *argv[]){
   // string words[] = {"hello", "goodbye", "sunrise", "sunset"};
   string words[] = {"alice", "bob", "cathy", "donald"};
 
-
-  for(int i=0; i<4; i++) {
-      list2->push_front(words[i]);
-      list3->push_back(words[i]);
+  for (int i = 0; i < 4; i++)
+  {
+    list2->push_front(words[i]);
+    list3->push_back(words[i]);
   }
 
   list2->print();
@@ -62,9 +66,7 @@ int main(int argc, char *argv[]){
   cout << "list2 sorted?  " << list2->is_sorted() << endl;
   cout << "list3 sorted?  " << list3->is_sorted() << endl;
 
-
   // list2->front = NULL;
-  
 
   delete list;
   delete list2;
